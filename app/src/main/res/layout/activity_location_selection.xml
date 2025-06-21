@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".location_selection">
+
+    <!-- Background Image: FULL SCREEN -->
+    <ImageView
+        android:id="@+id/bg_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background1" />
+
+    <!-- Scrollable Content Overlaid -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="@android:color/transparent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+            <!-- Back Icon -->
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/backicon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Study Location Field -->
+            <EditText
+                android:id="@+id/et_study_location"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:hint="Where do you want to study?"
+                android:background="@drawable/edit_text_bg"
+                android:padding="40dp"
+                android:textSize="23sp"
+                android:inputType="text"
+                android:imeOptions="actionNext"
+                android:nextFocusForward="@id/et_delivery_mode"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textCursorDrawable="@drawable/gray_cursor"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@id/btn_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Course Delivery Mode Field -->
+            <EditText
+                android:id="@+id/et_delivery_mode"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:hint="Preferred course delivery mode?"
+                android:background="@drawable/edit_text_bg"
+                android:padding="40dp"
+                android:textSize="23sp"
+                android:inputType="text"
+                android:imeOptions="actionDone"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/et_study_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Enter Location Label -->
+            <TextView
+                android:id="@+id/label_enter_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Location"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginTop="28dp"
+                app:layout_constraintTop_toBottomOf="@id/et_delivery_mode"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- New Location Button -->
+            <Button
+                android:id="@+id/btn_new_location"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:text="search"
+                android:backgroundTint="#E8E8E8"
+                android:textColor="#696969"
+                android:drawableStart="@drawable/mapicon"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/label_enter_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</FrameLayout>
