@@ -3,7 +3,9 @@ package com.s23010417.edupathlanka;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class dashboard extends AppCompatActivity {
@@ -28,6 +30,26 @@ public class dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(dashboard.this, profile.class);
+                startActivity(intent);
+            }
+        });
+
+        // Handle "Start Exploring" button
+        Button btnExplore = findViewById(R.id.btn_explore);
+        btnExplore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(dashboard.this, customize_path.class);
+                startActivity(intent);
+            }
+        });
+
+        // ✅ Handle "Browse Now" button to navigate to vocational_courses
+        Button btnBrowse = findViewById(R.id.btn_browse);
+        btnBrowse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(dashboard.this, vocational_courses.class);
                 startActivity(intent);
             }
         });

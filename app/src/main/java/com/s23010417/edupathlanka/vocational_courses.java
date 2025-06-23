@@ -4,19 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.activity.EdgeToEdge;
 
-public class profile extends AppCompatActivity {
+public class vocational_courses extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_vocational_courses);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -24,13 +25,14 @@ public class profile extends AppCompatActivity {
             return insets;
         });
 
-        // ✅ Navigate to Dashboard when Home icon is clicked
-        ImageView homeIcon = findViewById(R.id.homeIcon);
-        homeIcon.setOnClickListener(new View.OnClickListener() {
+        // ✅ Back icon click: go back to dashboard
+        ImageView backIcon = findViewById(R.id.backIcon);
+        backIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(profile.this, dashboard.class);
+                Intent intent = new Intent(vocational_courses.this, dashboard.class);
                 startActivity(intent);
+                finish(); // Optional: prevent going back to this screen
             }
         });
     }

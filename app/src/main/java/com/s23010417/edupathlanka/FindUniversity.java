@@ -17,7 +17,6 @@ public class FindUniversity extends AppCompatActivity {
 
         Button btnContinue = findViewById(R.id.btn_continue);
         btnContinue.setOnClickListener(v -> {
-            // ✅ Navigate to location_selection activity
             Intent intent = new Intent(FindUniversity.this, location_selection.class);
             startActivity(intent);
         });

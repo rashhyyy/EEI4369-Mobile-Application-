@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.s23010417.edupathlanka">
@@ -14,38 +13,42 @@
         android:theme="@style/Theme.EdupathLanka"
         tools:targetApi="31">
 
-        <!-- 👤 Profile Activity -->
+        <activity
+            android:name=".course_details"
+            android:exported="true" />
+
+        <activity
+            android:name=".suggest_oopurnities"
+            android:exported="false" />
+        <activity
+            android:name=".vocational_courses"
+            android:exported="false" />
+        <activity
+            android:name=".customize_path"
+            android:exported="false" />
+        <activity
+            android:name=".startExploring"
+            android:exported="false" />
         <activity
             android:name=".profile"
             android:exported="false" />
-
-        <!-- 📍 Location & Course Selection Activity -->
         <activity
             android:name=".location_selection"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
-        <!-- 🧭 Find University Activity -->
         <activity
             android:name=".FindUniversity"
             android:exported="true" />
-
-        <!-- 🏠 Dashboard Activity -->
         <activity
             android:name=".dashboard"
             android:exported="true" />
-
-        <!-- 🔐 Sign In Activity -->
         <activity
             android:name=".sign_in"
             android:exported="false" />
-
-        <!-- 📝 Sign Up Activity -->
         <activity
             android:name=".Signup"
             android:exported="false" />
 
-        <!-- 🚀 Main Launcher Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -54,7 +57,5 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
-
 </manifest>
